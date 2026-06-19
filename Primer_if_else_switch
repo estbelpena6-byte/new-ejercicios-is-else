@@ -1,0 +1,756 @@
+using Microsoft.VisualBasic;
+using System;
+using System.ComponentModel.Design;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+
+namespace primerose_ejercicios
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int opcion = 0;
+
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("================Categorias==============");
+                Console.WriteLine("1. categoria ");
+                Console.WriteLine("2. categoria ");
+                Console.WriteLine("3. Salir");
+                Console.WriteLine("Elige una categoria:");
+
+
+                opcion = int.Parse(Console.ReadLine());
+
+                switch (opcion)
+                {
+                    case 1:
+                        Categoria_1();
+                        break;
+                    case 2:
+                        Categoria_2();
+                        break;
+                    case 3: 
+                        Console.WriteLine("saliendo del sistema");
+                        break;
+                    default:  
+                        Console.WriteLine("no existe esta opcion");
+                        Console.WriteLine();
+                        break;
+     
+                } 
+
+            } while (opcion != 3);
+
+        }
+        static void Categoria_1()
+        {
+            int opcion = 0;
+            do { 
+            Console.Clear();
+            Console.WriteLine("==============Primera Categoria===============");
+            Console.WriteLine("1. Número positivo, negativo o cero");
+            Console.WriteLine("2. Número par o impar");
+            Console.WriteLine("3. Mayor de edad");
+            Console.WriteLine("4. Múltiplo de 5");
+            Console.WriteLine("5. Descuento por edad");
+            Console.WriteLine("6. Calificación aprobatoria");
+            Console.WriteLine("7. Día de la semana");
+            Console.WriteLine("8. Número mayor entre dos");
+            Console.WriteLine("9. Mayor entre tres números");
+            Console.WriteLine("10. Clasificación de ángulos");
+            Console.WriteLine("11: Salir ");
+            Console.WriteLine("Elige una opcion: ");
+            
+            opcion = int.Parse(Console.ReadLine());
+
+                switch (opcion)
+                {
+                    case 1:
+                        Número_positivo_negativo_o_cero();
+                        break;
+                    case 2:
+                        Número_par_o_impar();
+                        break;
+                    case 3:
+                        Mayor_de_edad();
+                        break;
+                    case 4:
+                        Múltiplo_de_5();
+                        break;
+                    case 5:
+                        Descuento_por_edad();
+                        break;
+                    case 6:
+                        Calificación_aprobatoria();
+                        break;
+                    case 7:
+                        Día_de_la_semana();
+                        break;
+                    case 8:
+                        Número_mayor_entre_dos();
+                        break;
+                    case 9:
+                        Mayor_entre_tres_números();
+                        break;
+                    case 10:
+                        Clasificación_de_ángulos();
+                        break;
+                    case 11:
+                        Console.WriteLine("Saliendo del menu");
+                        break;
+                    default:
+                        Console.WriteLine("Opcion no permitida, eliga otra opcion");
+                        break;
+                }
+        }while (opcion != 11) ;
+    }
+        static void Categoria_2()
+        {
+            int opcion = 0;
+            do { 
+            Console.Clear();
+            Console.WriteLine("===========segunda categoria============");
+            Console.WriteLine("1. Cálculo de impuestos");
+            Console.WriteLine("2. Clasificación de números");
+            Console.WriteLine("3. Verificación de año bisiesto");
+            Console.WriteLine("4. Conversión de calificaciones"); 
+            Console.WriteLine("5. Comparación de tres longitudes");
+            Console.WriteLine("6. Calculadora de descuentos");
+            Console.WriteLine("7. Tipo de triángulo");
+            Console.WriteLine("8. Evaluación de temperatura");
+            Console.WriteLine("9. Conversión de horas a turnos");
+            Console.WriteLine("10. Clasificación de IMC");
+            Console.WriteLine("11. Salir");
+            Console.WriteLine("Elige una opcion:");
+
+            opcion = int.Parse(Console.ReadLine());
+
+            switch (opcion)
+            {
+                case 1:
+                    Cálculo_de_impuestos();
+                    break;
+                case 2:
+                    Clasificación_de_números();
+                    break;
+                case 3:
+                    Verificación_de_año_bisiesto();
+                    break;
+                case 4:
+                    Conversión_de_calificaciones();
+                    break;
+                case 5:
+                    Comparación_de_tres_longitudes();
+                    break;
+                case 6:
+                    Calculadora_de_descuentos();
+                    break;
+                case 7:
+                    Tipo_de_triángulo();
+                    break;
+                case 8:
+                    Evaluación_de_temperatura();
+                    break;
+                case 9:
+                    Conversión_de_horas_a_turnos();
+                    break;
+                case 10:
+                    Clasificación_de_IMC();
+                    break;
+                case 11:
+                    Console.WriteLine("saliendo del programa");
+                    break;
+                default:
+                    Console.WriteLine("esta opcion no se encuentra. Elige otra opcion");
+                    break;
+            } 
+
+        }while (opcion != 11);
+    }
+    static void Número_positivo_negativo_o_cero()
+        {
+            Console.Clear();
+            int num = 0;
+            Console.WriteLine("Escribe un numero");
+            num = int.Parse(Console.ReadLine());
+
+            if (num < 0)
+            {
+                Console.WriteLine("El numero es negativo");
+            }
+            else if (num > 0)
+            {
+                Console.WriteLine("El es positivo");
+            }
+            else
+            {
+                Console.WriteLine("Es cero");
+            }
+            Console.WriteLine("\nPresione ENTER para volver al menú...");
+            Console.ReadLine();
+        }
+        static void Número_par_o_impar()
+        {
+            Console.Clear();
+            int num = 0;
+            Console.WriteLine("Escribe el numero");
+            num = int.Parse(Console.ReadLine());
+
+            if (num % 2 == 0 )
+            {
+                Console.WriteLine("Es par");
+            } 
+            else
+            {
+                Console.WriteLine("Es imapar");
+            }
+            Console.WriteLine("\nPresione ENTER para volver al menú...");
+            Console.ReadLine();
+        }
+        static void Mayor_de_edad()
+        {
+            Console.Clear();
+
+            int Edad = 0;
+            Console.WriteLine("Escribe la Edad");
+            Edad = int.Parse(Console.ReadLine());
+
+            if (Edad !<= 0)
+            {
+                Console.WriteLine("no puede ser negativo ni cero ");
+            }
+            else if (Edad > 18)
+            {
+                Console.WriteLine("Eres mayor de edad");
+            }
+            else
+            {
+                Console.WriteLine("Eres Menor de edad ");
+            }
+            Console.WriteLine("\nPresione ENTER para volver al menú...");
+            Console.ReadLine();
+        }
+        static void Múltiplo_de_5()
+        {
+            Console.Clear();
+
+            
+            Console.WriteLine("Escribe un numero:");
+            int num = int.Parse(Console.ReadLine()) ;
+
+            if (num % 5 == 0)
+            {
+                Console.WriteLine($"El numero {num} es multiplo de 5");
+            }
+            else
+            {
+                Console.WriteLine($"El numero {num} no es multiplo de 5");
+            }
+
+            Console.WriteLine("\nPresione ENTER para volver al menú...");
+            Console.ReadLine();
+        }
+        static void Descuento_por_edad()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Ingresa tu edad para sabar si aplica para el descuento:");
+            int Edad = int.Parse(Console.ReadLine());
+
+            if (Edad >= 60)
+            {
+                Console.WriteLine("Felicidades si aplica para el descuento");
+            }
+            else
+            {
+                Console.WriteLine("lo siento no aplica para el descueto");
+            }
+
+            Console.WriteLine("\nPresione ENTER para volver al menú...");
+            Console.ReadLine();
+        }
+        static void Calificación_aprobatoria()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Agrega tu calificación de (0-100):");
+            int nota = int.Parse(Console.ReadLine());
+
+            if (nota >= 60 && nota <= 100)
+            {
+                Console.WriteLine("felicidades haz aprobado");
+            }
+            else if (nota > 100)
+            {
+                Console.WriteLine("no se puede poner numeros superiores a 100");
+            }
+            else
+            {
+                Console.WriteLine("Lo sieto haz reprobado");
+            }
+
+
+            Console.WriteLine("\nPresione ENTER para volver al menú...");
+            Console.ReadLine();
+        }
+        static void Día_de_la_semana()
+        {
+            
+            Console.Clear();
+            
+            Console.WriteLine("Elige un numero del 1 al 7:");
+            Console.WriteLine("1");
+            Console.WriteLine("2");
+            Console.WriteLine("3");
+            Console.WriteLine("4");
+            Console.WriteLine("5");
+            Console.WriteLine("6");
+            Console.WriteLine("7"); 
+            Console.WriteLine("Opcion");
+
+            int dia = int.Parse(Console.ReadLine());
+
+           switch (dia)
+            {
+                case 1:
+                    Console.Clear();
+                    Console.WriteLine("Dia Lunes");
+                    break;
+                case 2:
+                    Console.Clear();
+                    Console.WriteLine("Dia Martes");
+                    break;
+                case 3:
+                    Console.Clear();
+                    Console.WriteLine("Dia Miercoles");
+                    break;
+                case 4:
+                    Console.Clear();
+                    Console.WriteLine("Dia jueves");
+                    break;
+                case 5:
+                    Console.Clear();
+                    Console.WriteLine("Dia viernes");
+                    break;
+                case 6:
+                    Console.Clear();
+                    Console.WriteLine("Dia Sabado");
+                    break;
+                case 7:
+                    Console.Clear();
+                    Console.WriteLine("Dia lunes"); 
+                    break; 
+            }
+
+            Console.WriteLine("\nPresione ENTER para volver al menú...");
+            Console.ReadLine();
+        }
+        static void Número_mayor_entre_dos()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Escribe el primer número:");
+            int num1 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Escribe el segundo número:");
+            int num2 = int.Parse(Console.ReadLine());
+
+            if (num1 > num2)
+            {
+                Console.WriteLine($"El primer numero {num1} es mayor");
+            }
+            else if (num2 > num1)
+            {
+                Console.WriteLine($"El segundo numero {num2} es mayor");
+            }
+
+            Console.WriteLine("\nPresione ENTER para volver al menú...");
+            Console.ReadLine();
+        }
+        static void Mayor_entre_tres_números()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Escribe el primer número:");
+            int num1 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Escribe el segundo número:");
+            int num2 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Escribe el tercer número:");
+            int num3 = int.Parse(Console.ReadLine());
+
+            if (num1 > num2 && num1 > num3)
+            {
+                Console.WriteLine($"El primer numero {num1} es mayor");
+            }
+            else if (num2 > num1 && num2 > num3)
+            {
+                Console.WriteLine($"El segundo numero {num2} es mayor");
+            }
+            else if (num3 > num1 && num3 > num2)
+            {
+                Console.WriteLine($"El tercer numero {num3} es mayor");
+            }
+
+            Console.WriteLine("\nPresione ENTER para volver al menú...");
+            Console.ReadLine();
+        }
+        static void Clasificación_de_ángulos()
+        {
+            Console.Clear();
+
+            Console.WriteLine("agrega el angulo:");
+            int angulo = int.Parse(Console.ReadLine());
+
+            if (angulo < 90)
+            {
+                Console.WriteLine("angulo Agudo");
+            }
+            else if (angulo == 90)
+            {
+                Console.WriteLine("angulo recto ");
+            }
+            else if (angulo > 90 && angulo < 180)
+            {
+                Console.WriteLine("Angulo obstuso");
+            }
+            else if (angulo == 180)
+            {
+                Console.WriteLine("Angulo Llano");
+            }
+            
+
+            Console.WriteLine("\nPresione ENTER para volver al menú...");
+            Console.ReadLine();
+        }
+        
+        static void Cálculo_de_impuestos()
+        {
+            Console.Clear();
+
+            Console.WriteLine("agrega el salario mensual:");
+            double salario = double.Parse(Console.ReadLine());
+            double impuesto = 0;
+
+            if (salario < 10000) 
+            {
+                impuesto = 0;
+                Console.WriteLine($"Este es el impuesto {impuesto}");
+            }
+            else if (salario > 10000 && salario < 30000) 
+            {
+                impuesto = salario * 0.1;
+                Console.WriteLine($"Este es el impuesto {impuesto}");
+            }
+            else if (salario > 30000)
+            {
+                impuesto = salario * 0.2;
+                Console.WriteLine($"Este es el impuesto {impuesto}");
+            }
+
+
+            Console.WriteLine("\nPresione ENTER para volver al menú...");
+            Console.ReadLine();
+        }
+        static void Clasificación_de_números()
+        {
+            Console.Clear();
+            Console.WriteLine("Escribe el primer número:");
+            double num1 = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Escribe el segundo número:");
+            double num2 = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Escribe el tercer número:");
+            double num3 = double.Parse(Console.ReadLine());
+
+            if (num1 % 1 != 0 || num2 % 1 != 0 || num3 % 1 != 0)
+            {
+                Console.WriteLine("Son mixtos");
+            }
+            else if (num1 > 0 && num2 > 0 && num3 > 0)
+            {
+                Console.WriteLine("son positivo");
+            }
+            else if (num1 < 0 && num2 < 0 && num3 < 0)
+            {
+                Console.WriteLine("Son neagtivos");
+            } 
+            
+            else if (num1 == 0 && num2 == 0 && num3 == 0)
+            {
+                Console.WriteLine("son ceros");
+            }
+            else
+            {
+                Console.WriteLine("estan mezclados");
+            }
+
+            Console.WriteLine("\nPresione ENTER para volver al menú...");
+            Console.ReadLine();
+        }
+        static void Verificación_de_año_bisiesto()
+        {
+            Console.Clear();
+
+            Console.WriteLine("agrega el año para saber si es bisiesto");
+            int anio = int.Parse(Console.ReadLine());
+
+            if ((anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0))
+            {
+                Console.WriteLine($"El anio {anio} es bisiesto ");
+            }
+            else
+            {
+                Console.WriteLine($"El anio {anio} no es bisiesto ");
+            }
+
+            
+
+            Console.WriteLine("\nPresione ENTER para volver al menú...");
+            Console.ReadLine();
+        }
+        static void Conversión_de_calificaciones()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Escribe tu calificación:");
+            int nota = int.Parse(Console.ReadLine());
+
+            if (nota >= 90)
+            {
+                Console.WriteLine("tienes una, A");
+            }
+            else if (nota >= 80)
+            {
+                Console.WriteLine("tienes una, B");
+            }
+            else if (nota >= 70)
+            {
+                Console.WriteLine("tienes una, C");
+            }
+            else if (nota >= 60)
+            {
+                Console.WriteLine("tienes una, D");
+            }
+            else
+            {
+                Console.WriteLine("tienes una, F");
+            }
+
+            Console.WriteLine("\nPresione ENTER para volver al menú...");
+            Console.ReadLine();
+        }
+        static void Comparación_de_tres_longitudes()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Escribe el primer número:");
+            int num1 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Escribe el segundo número:");
+            int num2 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Escribe el tercer número:");
+            int num3 = int.Parse(Console.ReadLine());
+
+            if (num1 + num2 > num3)
+            {
+                if (num1 + num3 > num2)
+                {
+                    if (num2 + num3 > num1)
+                    {
+                        Console.WriteLine("si se puede formar un triangulo con estas longitudes");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No se puede formar un trinagulo (num2 + num3 no es mayor que num1)");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No se puede formar un triangulo (num1 + num3 no es mayor que num2)");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No se puede formar un triangulo (num1 + num2 no es mayor que num3)");
+            }
+
+            Console.WriteLine("\nPresione ENTER para volver al menú...");
+            Console.ReadLine();
+        }
+        static void Calculadora_de_descuentos()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Escriba el precio de su producto");
+            double producto = double.Parse(Console.ReadLine());
+            double descuento = 0;
+
+            if (producto <= 50)
+            {
+                descuento = 0;
+                Console.WriteLine("El descuento no se aplica.");
+            }
+            else if (producto > 50 && producto < 100)
+            {
+                descuento = producto * 0.05;
+                Console.WriteLine($"Es aplicable, su descuento es del 5% en total seria {descuento}");
+            }
+            else if (producto >= 100)
+            {
+                descuento = producto * 0.1;
+                Console.WriteLine($"Es aplicable, su descuento es del 10% en total seria {descuento}");
+            }
+
+
+            Console.WriteLine("\nPresione ENTER para volver al menú...");
+            Console.ReadLine();
+        }
+        static void Tipo_de_triángulo()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Escribe el primer número:");
+            int n1 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Escribe el segundo número:");
+            int n2 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Escribe el tercer número:");
+            int n3 = int.Parse(Console.ReadLine());
+
+            
+            if ((n1 + n2 > n3) && (n1 + n3 > n2) && (n2 + n3 > n1))
+            {
+                Console.WriteLine("¡Sí se puede formar un triángulo!");
+
+                
+                if (n1 == n2 && n2 == n3)
+                {
+                    Console.WriteLine("El triángulo es Equilátero (todos los lados son iguales).");
+                }
+                else if (n1 == n2 || n1 == n3 || n2 == n3)
+                {
+                    Console.WriteLine("El triángulo es Isósceles (tiene dos lados iguales).");
+                }
+                else
+                {
+                    Console.WriteLine("El triángulo es Escaleno (todos los lados son diferentes).");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No se puede formar un triángulo con esas longitudes.");
+            }
+
+
+            Console.WriteLine("\nPresione ENTER para volver al menú...");
+            Console.ReadLine();
+        }
+        static void Evaluación_de_temperatura()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Escribe la temperatura ambiente usuario:");
+            int temperatura = int.Parse(Console.ReadLine());
+
+            if (temperatura < 0)
+            {
+                Console.WriteLine("hace mucho frio");
+            }else if (temperatura >=0 && temperatura <= 20) 
+            {
+                Console.WriteLine("Clima Fresco");
+            }else if (temperatura >= 21 && temperatura < 30)
+            {
+                Console.WriteLine("Clima agradable");
+            }
+            else if (temperatura == 30)
+            {
+                Console.WriteLine("Hace mucho calor");
+            }
+
+            Console.WriteLine("\nPresione ENTER para volver al menú...");
+            Console.ReadLine();
+        }
+        static void Conversión_de_horas_a_turnos()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Diga me la hora en hora estados unidos (0-24) :");
+            int horas = int.Parse(Console.ReadLine());
+
+            if (horas >=6  && horas <= 11)
+            {
+                Console.WriteLine("Es de Mañana");
+            }
+            else if (horas >= 12 && horas <= 17 )
+            {
+                Console.WriteLine("Es de tarde");
+            }
+            else if (horas >= 18 && horas <= 23)
+            {
+                Console.WriteLine("Es de noche");
+            }
+            else if (horas >= 0 && horas <= 5)
+            {
+                Console.WriteLine("Es de Madrugada");
+            }
+
+            Console.WriteLine("\nPresione ENTER para volver al menú...");
+            Console.ReadLine();
+        }
+        static void Clasificación_de_IMC()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Agrega tu peso en KG");
+            double Peso = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Agrega tu altura en Metro");
+            double altura = double.Parse(Console.ReadLine());
+
+            double IMC = 0;
+
+            IMC =  Peso / (altura * altura);
+
+
+            Console.WriteLine("========= Respuesta ===========");
+            Console.WriteLine($"Tu IMC es: {IMC:F2}");
+
+            if (IMC < 18.5)
+            {
+                Console.WriteLine("Bajo Peso");
+            }
+            else if (IMC >= 18.5 && IMC <= 24.9)
+            {
+                Console.WriteLine("Peso Normal");
+            }
+            else if (IMC >= 25 && IMC <= 29.9)
+            {
+                Console.WriteLine("Sobrepeso");
+            }
+            else if (IMC >= 30)
+            {
+                Console.WriteLine("Obesidad");
+            }
+            Console.WriteLine("\nPresione ENTER para volver al menú...");
+            Console.ReadLine();
+        }
+    }
+}
+
+
+
+    
+
+
+
+
+            
+           
